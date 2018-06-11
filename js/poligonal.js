@@ -4,9 +4,12 @@ $.fn.poligonal = function(n, d)
     {
         var colors = [ "#ff5733", "#ffbd33", "#dbff33", "#75ff33", "#33ff57", "#33ffbd" ];
         var ctx = this.getContext('2d');
+        var bounds = this.getBoundingClientRect();
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(0, 0, bounds.width, bounds.height);
         if (n > 1 && d > 1) {
             // Calculamos la circunferencia exterior
-            var w = 30;
+            var w = 25;
             var pr = w * 0.75;
             var pi2 = 2 * Math.PI;
             var pi34 = (Math.PI / 2) + (Math.PI / n);
